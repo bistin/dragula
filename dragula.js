@@ -634,9 +634,11 @@ function getScrollContainer(node) {
 }
 
 function startAutoScrolling(node, amount, direction) {
-  _autoScrollingInterval = raf(function() {
-    startAutoScrolling(node, amount, direction);
-  });
+  if(!_autoScrollingInterval) {
+    _autoScrollingInterval = raf(function() {
+      startAutoScrolling(node, amount, direction);
+    });
+  }
 
   return node[direction] += (amount * 0.25);
 }
