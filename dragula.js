@@ -645,7 +645,7 @@ function startScroll(item, event, options) {
   var scrollingElement = null;
   var scrollEdge = options.scrollEdge;
   var scrollSpeed = 20;
-  var scrollContainer = getScrollContainer(item);
+  var scrollContainer = options.scrollNode || getScrollContainer(item);
   var pageX = null;
   var pageY = null;
 
